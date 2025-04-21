@@ -1,25 +1,26 @@
 # khurshe_kuas
 Before:
 
-The dataset used in this work consisted of simultaneous glucose measurements and multi-modal data from the Empatica E4. 
-Glucose was sampled every 5 minutes using a Dexcom G6 CGM sensor. 
-Blood Volume Pulse (BVP), Tri-axial Accelerometer (acc_x, acc_y, acc_z) , Electrodermal Activity (EDA), Skin Temperature (Temp), and Heart Rate data was available at the following sampling resolutions from the Empatica E4:
-BVP: 64 Hz
-acc_x, acc_y, acc_z: 32 Hz
-EDA: 4 Hz
-Temp: 4 Hz
-HR: 1 Hz
+The dataset used in this work consisted of simultaneous glucose measurements and multi-modal wearable data.  
+Glucose was sampled every 5 minutes using a Dexcom G6 CGM sensor.  
+Blood Volume Pulse (BVP), Tri-axial Accelerometer (acc_x, acc_y, acc_z), Electrodermal Activity (EDA), Skin Temperature (Temp), and Heart Rate data were sampled at the following sampling resolutions from the Empatica E4:
+
+BVP: 64 Hz  
+acc_x, acc_y, acc_z: 32 Hz  
+EDA: 4 Hz  
+Temp: 4 Hz  
+HR: 1 Hz  
 
 The following pipeline was applied for initial pre-processing:
 1) Tri-axial accelerometry data was used to compute the vector magnitude of the acceleration (ACC).
-2) Outlier removal and filtering
-  i) HR and Temp signals were filtered in the time-domain by removing infeasible values.
-  ii) EDA, ACC, and BVP signals were filtered in the frequency-domain using the following filters:
-      EDA: low-pass filter, cutoff = [0.5]​
-      ACC: band-pass filter, cutoff = [0.29, 10]​
-      BVP: band-pass filter, cutoff = [0.5, 5]
-3) Epoch-wise segmentation
-   Each signal was segmented into 5-minute epochs based on the available glucose timestamps.
+2) Outlier removal and filtering  
+  i) HR and Temp signals were filtered in the time-domain by removing infeasible values.  
+  ii) EDA, ACC, and BVP signals were filtered in the frequency-domain using the following filters:    
+      EDA: low-pass filter, cutoff = [0.5]  ​
+      ACC: band-pass filter, cutoff = [0.29, 10]  ​
+      BVP: band-pass filter, cutoff = [0.5, 5]  
+3) Epoch-wise segmentation  
+   Each signal was segmented into 5-minute epochs based on the available glucose timestamps.  
 4) Missing value imputation
 
 Now:
