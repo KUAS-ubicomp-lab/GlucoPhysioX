@@ -1,5 +1,6 @@
 # khurshe_kuas
 Before:
+
 The dataset used in this work consisted of simultaneous glucose measurements and multi-modal data from the Empatica E4. 
 Glucose was sampled every 5 minutes using a Dexcom G6 CGM sensor. 
 Blood Volume Pulse (BVP), Tri-axial Accelerometer (acc_x, acc_y, acc_z) , Electrodermal Activity (EDA), Skin Temperature (Temp), and Heart Rate data was available at the following sampling resolutions from the Empatica E4:
